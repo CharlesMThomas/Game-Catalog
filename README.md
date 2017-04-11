@@ -27,7 +27,7 @@ Game Catalog was built and tested using Linux via VirtualBox. VirtualBox was con
   * Windows Users: Download the Unix-style terminal GitBash from here: https://git-scm.com/downloads
 * Change directories to **vagrant**
 
-## Start the VirtualBox Ubuntu Installation
+## Starting the VirtualBox Ubuntu Installation
 
 Use the vagrant up command to start the Ubuntu Linux installation within VirtualBox
 
@@ -59,7 +59,7 @@ If you are running Ubuntu locally, the following dependencies are required:
 
 `sudo pip install httplib2`
 
-## Setting up the Sqlite Database
+## Setting up the Sqlite database
 
 #### Local Machine (not the VirtualBox) or Local Linux: 
 
@@ -79,7 +79,7 @@ Run the database seed file to load the dummy data
 
 `python lotsofgames.py`
 
-## Start the Game Catalog App
+## Starting the Game Catalog App
 
 Run the application
 
@@ -103,14 +103,14 @@ Open the application in your web browser
 * Enter your GitHub login credentials and authorize the Game Catalog App.
 * If login was successful, you will be redirected back to the home page showing a logged in status.
 
-#### Add a Game (Must be Logged In)
+#### Adding a Game (Must be Logged In)
 
 * Click the 'Add Game' button at the top of the site.
 * Fill out all fields on the new game page.
 * Click the 'Submit' button.
 * If the game was successfully added, you will be redirected to the new games details page.
 
-#### Edit a Game (Must be Logged In)
+#### Editing a Game (Must be Logged In)
 
 * Click on a game from either the home page or device page to view game detail page.
 * Click the 'Edit' button below the game description.
@@ -118,7 +118,7 @@ Open the application in your web browser
 * Click the 'Submit' button.
 * If the game was successfully updated, you will be redirected back to the game's detail page.
 
-#### Delete a Game (Must be Logged In)
+#### Deleting a Game (Must be Logged In)
 
 * Click on a game from either the home page or device page to view game detail page.
 * Click the 'Yes' button when asked if you really want to delete the game on the game delete page.
