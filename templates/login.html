@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<style type="text/css">
+    .container {
+        background-color: inherit !important;
+    }
+</style>
+
+<div class="col-sm-12 text-center login-wrapper">
+    <a class="github-login" href="https://github.com/login/oauth/authorize?scope=user:email&client_id={{CLIENT_ID}}"><button class="btn btn-success login"><i class="fa fa-github"></i> Login with GitHub</button></a>
+</div>
+<div class="col-sm-12 text-center result">
+
+</div>
+
+{% endblock %}

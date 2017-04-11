@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web|Ubuntu" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            var code = window.location.search.slice(6);
+            if (code){
+                $.ajax({
+                    type: 'POST',
+                    url: '/ghconnect?state={{STATE}}',
+                    processData: false,
+                    data: code,
+                    success: function(result) {
+                        $('.result').html('<h4>Login Successful! Redirecting...<h4>')
+                        setTimeout(function() {
+                        window.location.href = "/"
+                                    }, 2000);
+                    },
+                    error: function(result) {
+                        $('.result').html('<h4 class="error">Failed to Login! Please try again!</h4>')
+                    }
+                })
+            }
+        </script>
+	</head>
+    
+	<body>
+		<div class="container">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

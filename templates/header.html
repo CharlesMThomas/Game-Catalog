@@ -1,0 +1,29 @@
+<nav class="row">
+    <div class="container">
+      <div class="col-sm-4">
+      <a href="{{url_for('showConsoles')}}"><h2 class="title">Game Catalog</h2></a>
+      </div>
+      <div class="col-sm-4 text-center">
+        {% with messages = get_flashed_messages() %}
+
+          {% if messages %}
+
+            {% for message in messages %}
+            <h4 class="flash">{{message}}</h4>
+            {% endfor %}
+
+          {% endif %}
+
+        {% endwith %}
+      </div>
+      <div class="col-sm-4 text-right">
+      {% if 'name' not in session: %}
+      <a href="{{url_for('showLogin')}}"><button class="btn btn-default">Login</button></a>
+      {% else: %}
+      <a href="{{url_for('newGame')}}"><button class="btn btn-success add-game">Add Game</button></a>
+      <a href="{{url_for('gitHubDisconnect')}}"><button class="btn btn-default">Logout</button></a>
+      {% endif %}
+      </div>
+
+    </div>
+  </nav>

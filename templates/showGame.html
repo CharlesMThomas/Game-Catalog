@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<div class="col-md-12 game-wrapper">
+    <div class="col-md-4">
+        <img class="img img-responsive show-game-img" src="{{game.picture}}">
+    </div>
+
+    <div class="col-md-8">
+        <h2>{{game.name}}</br><small>{{game.company}}</small></h2>
+        <span class="price">${{game.cost}}</span>
+        <p class="desc">{{game.description}}</p>
+        {% if 'name' in session: %}
+        <div class="col-md-4 no-pad">
+            <a href="{{url_for('editGame', console_id = game.console_id, game_id = game.id)}}"><button class="btn btn-default">Edit</button></a>
+            <a href="{{url_for('deleteGame', console_id = game.console_id, game_id = game.id)}}"><button class="btn btn-default">Delete</button></a>
+        </div>
+        {% endif %}
+        <div class="col-md-12 no-pad back-link-wrapper">
+            <a class="back-link" href="{{url_for('showGamesByConsole', console_id = game.console_id)}}"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Back to Games</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

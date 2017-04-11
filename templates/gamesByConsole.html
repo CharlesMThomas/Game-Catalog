@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+  <div class="row top-row">
+
+    <h3 class="text-center row-header">Gaming Devices</h3>
+
+    {% for console in consoles %}
+
+    <a href="{{url_for('showGamesByConsole', console_id = console.id)}}">
+      <div class="col-md-3">
+        <div>
+          <h4 class="text-center">{{console.name}}</h4>
+          <img class="img img-responsive console-img" src="{{console.picture}}"/>
+        </div>
+      </div>
+    </a>
+
+    {% endfor %}
+    <div class="col-md-12">
+      <hr>
+    </div>
+  </div>
+
+
+  <div class="row game-row">
+    <h3 class="text-center row-header">Best Selling ({{console.name}})</h3>
+
+    {% for game in games %}
+
+    <a href="{{url_for('showGame', console_id = console.id, game_id = game.id)}}">
+        <div class="col-md-3 text-center game-col">
+            <img class="img img-responsive game-img" src="{{game.picture}}">
+            <h4>{{game.name}}</h4>
+        </div>
+    </a>
+
+    {% endfor %}
+  </div>
+{% endblock %}
